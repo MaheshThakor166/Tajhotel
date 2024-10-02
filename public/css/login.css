@@ -1,0 +1,77 @@
+.login-view{
+  background-color: var(--secondary-color);
+  height: 100vh;
+}
+
+.login-view .login-box{
+   height: 100%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.login-view .login-box .login-box-view{
+   background-color:#493607f5;
+   padding: 10px 10px;
+   border-radius: 10px;
+}
+.login-view .login-box .img-container{
+    max-width: 400px;
+}
+.login-view .login-box .img-container img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+.login-view .login-box .login-box-view .form-view{
+    padding: 20px 20px;
+}
+.login-view .login-box .login-box-view .login-title{
+   font-size: 50px;
+   font-weight: 400;
+   font-family: "Roboto", sans-serif;
+   letter-spacing: 1px;
+   color: var(--light-color);
+}
+.login-view .login-box .login-box-view .login-link-view{
+    color:var(--light-txt);
+    font-weight: 400;
+    font-size: 16px;
+}
+.login-view .login-box .login-box-view .login-link-view .lg-link{
+    text-decoration: underline;
+}
+@media screen and (max-width:1200px) {
+    .login-view .login-box .login-box-view .form-view {
+        padding: 18px 15px;
+    }
+    .login-view .login-box .login-box-view .login-title {
+        font-size: 45px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .login-view .login-box .login-box-view .login-title {
+        font-size: 36px;
+    }
+    .login-view .login-box .login-box-view {
+        margin: 0 26px;
+    }
+}
+@media screen and (max-width:767px) {
+    .login-view .login-box .login-box-view .form-view {
+        padding: 0 10px;
+    }
+    .login-view .login-box .login-box-view .login-title {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .login-view .login-box .img-container {
+        display: none;
+    }
+    .login-view .login-box .login-box-view .form-view {
+        padding: 13px 30px;
+    }
+}
