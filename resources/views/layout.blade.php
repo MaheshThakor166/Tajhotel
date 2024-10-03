@@ -12,6 +12,9 @@
     <div>
         @include('include.banner')
     </div>
+    <div>
+        @include('include.bookingprocess')
+    </div>
 
     <div>
         @include('include.offer')
@@ -19,7 +22,7 @@
     <div>
         @include('include.exlusivesection')
     </div>
-   
+
 
     <div>
        @yield('content') <!-- Placeholder for child content -->

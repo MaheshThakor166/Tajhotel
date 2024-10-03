@@ -1,0 +1,77 @@
+function increment(button) {
+    const input = button.parentElement.querySelector('input');
+    let value = parseInt(input.value);
+    input.value = value + 1;
+    updateTotals();
+}
+
+// Decrement function
+function decrement(button) {
+    const input = button.parentElement.querySelector('input');
+    let value = parseInt(input.value);
+    if (value > 0) {
+        input.value = value - 1;
+        updateTotals();
+    }
+}
+
+// Add more rooms
+document.getElementById('add-room').addEventListener('click', function() {
+    const roomCount = document.querySelectorAll('.room').length;
+    const newRoomNum = roomCount + 1;
+    const roomContainer = document.getElementById('rooms-container');
+
+    const newRoom = document.createElement('div');
+    newRoom.classList.add('room');
+    newRoom.setAttribute('data-room', newRoomNum);
+    newRoom.innerHTML = `
+        <button type="button" class="remove-room-btn" onclick="removeRoom(this)">×</button>
+        <div class="form-group mb-3">
+            <label>Room ${newRoomNum}</label>
+            <div class="row">
+                <div class="col">
+                    <label>Adults</label>
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary" onclick="decrement(this)">-</button>
+                        <input type="number" class="form-control text-center" name="adults[]" value="1" min="1" readonly>
+                        <button type="button" class="btn btn-outline-secondary" onclick="increment(this)">+</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <label>Children (0 - 12 yrs)</label>
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary" onclick="decrement(this)">-</button>
+                        <input type="number" class="form-control text-center" name="children[]" value="0" min="0" readonly>
+                        <button type="button" class="btn btn-outline-secondary" onclick="increment(this)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    roomContainer.appendChild(newRoom);
+    updateTotals();
+});
+
+// Remove a room
+function removeRoom(button) {
+    const room = button.closest('.room');
+    room.remove();
+    updateTotals();
+}
+
+// Update total rooms, adults, and children
+function updateTotals() {
+    const rooms = document.querySelectorAll('.room').length;
+    const adultsInputs = document.querySelectorAll('input[name="adults[]"]');
+    const childrenInputs = document.querySelectorAll('input[name="children[]"]');
+
+    let totalAdults = 0;
+    let totalChildren = 0;
+
+    adultsInputs.forEach(input => totalAdults += parseInt(input.value));
+    childrenInputs.forEach(input => totalChildren += parseInt(input.value));
+
+    document.getElementById('total-rooms').innerText = rooms;
+    document.getElementById('total-adults').innerText = totalAdults;
+    document.getElementById('total-children').innerText = totalChildren;
+}
