@@ -23,8 +23,18 @@
                    <div class="form-content">
                         <h4 class="login-title mb-3">Login</h4>
                    </div>
-                   <form action="/booking" method="POST">
-                    @csrf
+                   <form  action="{{route('loginMatch')}}" method="POST">
+                     @csrf
+
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                      <ul>
+                       @foreach ($errors->all() as $error)
+                         <li>{{ $error }}</li>
+                     @endforeach
+                      </ul>
+                       </div>
+                     @endif
                     <div class="form-group mt-3">
                         <input type="email" class="form-control" name="email" placeholder="Enter Email" required>
                     </div>
@@ -36,9 +46,11 @@
                        <div class="slignup-link d-flex justify-content-between mx-2 mt-4">
                           <span class="signup-txt text-white">Not a membrer?</span>
                           <span class="signup-link">
-                            <a href="{{ route('register') }}" class="text-grey text-white-50">Signup now</a>
+                            <a href="{{ route('register')}}" class="text-grey text-white-50">Signup now</a>
                             </span>
                        </div>
+                      
+
                 </form>
 
               </div>

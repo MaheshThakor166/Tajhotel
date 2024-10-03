@@ -28,7 +28,8 @@
                 <li class="nav-item"><a href="#" class="nav-link">more</a></li>
             </ul>
             <div class="btn-view">
-                <a href="#" class="login-btn">Login/join</a>
+                <a href="{{ route('login') }}" class="login-btn">Login/join</a>
+
                 <a href="#" class="primary-btn mx-2">book a stay</a>
             </div>
         </div>
