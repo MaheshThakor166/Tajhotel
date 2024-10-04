@@ -2,6 +2,7 @@
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoomController;
 
 
 Route::get('/', function () {
@@ -24,7 +25,11 @@ Route::get('dashboard',[UserController::class,'dashboardpage'])->name('dashboard
 
 // Route::view('booking','booking')->name('booking');
 
-Route::get('/room-category', function () {
+Route::get('/roomcategory', function () {
     return view('booking.roomcategory');
 })->name('room.category');
+Route::get('/roomcategory', [RoomController::class, 'index'])->name('room.category');
+
+// Route::get('/rooms', [RoomController::class, 'index']);  // Display rooms
+// Route::post('/rooms', [RoomController::class, 'store']); // Store room
 
