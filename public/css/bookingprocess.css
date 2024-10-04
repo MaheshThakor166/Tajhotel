@@ -1,0 +1,101 @@
+.bookingstay{
+    margin: 130px 0;
+    display: flex;
+    align-items: center;
+}
+.bookingstay .img-container{
+    max-width: 1000px;
+}
+.bookingstay .img-container img{
+    height: 100%;
+    width: 100%;
+}
+.bookingstay form {
+    background-color: #fff;
+    padding: 41px 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.bookingstay label {
+    margin-bottom: 5px;
+    color: #6a6868;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.bookingstay .form-control {
+    background-color: #8c6300ba !important;;
+    border: 1px solid #ddd;
+    border-radius:0 !important;
+}
+
+.bookingstay .input-group {
+    display: flex;
+}
+
+.bookingstay .input-group button {
+    width: 40px;
+}
+
+.bookingstay .form-control.text-center {
+    max-width: 60px;
+}
+
+.bookingstay #add-room {
+    display: block;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #b08a60;
+    font-weight: 600;
+    margin: 15px 0;
+    font-size: 17px;
+}
+.bookingstay .form-group{
+    margin-top: 20px;
+}
+
+.bookingstay #check-rates-btn {
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.bookingstay #check-rates-btn:hover {
+    background-color: #b08a60;
+    color: white;
+}
+
+.bookingstay .room {
+    position: relative;
+    padding-right: 40px;
+}
+
+.bookingstay .remove-room-btn {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background: none;
+    border: none;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Styles for totals row */
+#totals-row {
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 0 15px;
+}
+
+.btn-outline-secondary:focus {
+     box-shadow: none !important;
+}
+.btn-outline-secondary:hover {
+  background-color: var(--secondary-color) !important;
+}
