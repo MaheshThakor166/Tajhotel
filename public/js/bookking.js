@@ -1,15 +1,17 @@
 function increment(button) {
     const input = button.parentElement.querySelector('input');
     let value = parseInt(input.value);
-    input.value = value + 1;
-    updateTotals();
+    if (value < 7) {
+        input.value = value + 1;
+        updateTotals();
+    }
 }
 
 // Decrement function
 function decrement(button) {
     const input = button.parentElement.querySelector('input');
     let value = parseInt(input.value);
-    if (value > 0) {
+    if (value > 1) {
         input.value = value - 1;
         updateTotals();
     }
@@ -75,3 +77,36 @@ function updateTotals() {
     document.getElementById('total-adults').innerText = totalAdults;
     document.getElementById('total-children').innerText = totalChildren;
 }
+
+
+
+ // Set minimum date for check-in to today
+ const today = new Date().toISOString().split('T')[0];
+ document.getElementById("check_in").setAttribute("min", today);
+
+ // Add event listener to check-in date
+ document.getElementById("check_in").addEventListener("change", function() {
+     const checkInDate = document.getElementById("check_in").value;
+     const checkOutInput = document.getElementById("check_out");
+
+     // Set the minimum check-out date to be one day after check-in
+     const nextDay = new Date(checkInDate);
+     nextDay.setDate(nextDay.getDate() + 1);
+     checkOutInput.setAttribute("min", nextDay.toISOString().split('T')[0]);
+
+     // If check-out date is earlier or same as check-in, clear the check-out value
+     if (checkOutInput.value <= checkInDate) {
+         checkOutInput.value = '';
+     }
+ });
+
+ // Optional: Prevent form submission if check-in and check-out dates are the same
+ document.getElementById("check_out").addEventListener("change", function() {
+     const checkInDate = document.getElementById("check_in").value;
+     const checkOutDate = document.getElementById("check_out").value;
+
+     if (checkInDate === checkOutDate) {
+         alert("Check-out date cannot be the same as check-in date.");
+         document.getElementById("check_out").value = ''; // Clear the check-out field
+     }
+ });
