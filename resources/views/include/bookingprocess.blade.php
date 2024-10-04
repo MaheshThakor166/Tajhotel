@@ -9,7 +9,8 @@
 
     <div class="row mt-5">
            <div class="col-lg-6">
-            <form>
+            <form  action="{{ url('/check-rates') }}" method="POST">
+                @csrf
                 <!-- Date Selection -->
                 <div class="form-group mb-3 row">
                     <div class="col">
