@@ -67,7 +67,17 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $room->title }}</h5>
-                            <p class="card-text">{{ $room->description }}</p>
+                           <p class="card-text">{{ $room->description }}</p>
+                           @if(!empty($room->features))
+                           <ul class="room-features" >
+                               @foreach(json_decode($room->features) as $feature)
+                                   <li>{{ $feature }}</li>
+                               @endforeach
+                           </ul>
+                       @else
+                           <p>No features available for this room.</p>
+                       @endif
+
                             <p class="mb-4"><strong class="price-tag">Price:</strong> ${{ $room->price }}/night</p>
                             <a href="{{ route('finalbooking') }}" class="primary-btn mt-4 mb-3">Book Now</a>
                         </div>
