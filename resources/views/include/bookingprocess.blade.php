@@ -8,7 +8,7 @@
     </div>
 
     <div class="row mt-5">
-           <div class="col-lg-7">
+           <div class="col-lg-6">
             <form>
                 <!-- Date Selection -->
                 <div class="form-group mb-3 row">
@@ -65,9 +65,9 @@
             </form>
 
            </div>
-           <div class="col-lg-5">
+           <div class="col-lg-6 mt-4">
                <div class="img-container">
-                   <img src="{{ asset('images/st.jpg') }}" alt="booking img">
+                   <img src="{{ asset('images/ff.jpg') }}" alt="booking img">
                </div>
            </div>
 
