@@ -66,7 +66,7 @@
                             <h5 class="card-title">{{ $room->title }}</h5>
                             <p class="card-text">{{ $room->description }}</p>
                             <p><strong>Price:</strong> ${{ $room->price }}/night</p>
-                            <a href="#" class="btn btn-primary">Book Now</a>
+                            <a href="{{ route('finalbooking') }}" class="btn btn-primary">Book Now</a>
                         </div>
                     </div>
                 </div>
