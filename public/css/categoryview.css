@@ -12,3 +12,19 @@
     color: var(--primary-color);
     font-size: 19px;
 }
+.cont-view .d-view{
+    margin: 0;
+}
+.cont-view .room-features{
+    padding: 0;
+    column-count: 2;
+}
+.cont-view .room-features li{
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 600;
+}
+.cont-view .room-features i{
+    font-size: 15px;
+    color: var(--primary-color);
+}

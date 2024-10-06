@@ -71,7 +71,7 @@
                            @if(!empty($room->features))
                            <ul class="room-features" >
                                @foreach(json_decode($room->features) as $feature)
-                                   <li>{{ $feature }}</li>
+                                   <li><i class="fa-solid fa-arrow-right"></i> {{ $feature }}</li>
                                @endforeach
                            </ul>
                        @else
