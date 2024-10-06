@@ -19,8 +19,11 @@
     <div>
         @include('include.offer')
     </div>
-    <div>
+    {{-- <div>
         @include('include.exlusivesection')
+    </div> --}}
+    <div>
+        @include('include.footer')
     </div>
 
 

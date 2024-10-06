@@ -11,10 +11,10 @@ class RoomController extends Controller
     {
         // Fetch all rooms from the database
         $rooms = Room::all(); // ya tum kisi specific criteria ke according fetch kar sakte ho
-    
+
         return view('booking.roomcategory', compact('rooms')); // Pass the rooms data to the view
     }
-    
+
     // public function store(Request $request)
     // {
     //     // Validate request inputs
@@ -57,10 +57,10 @@ class RoomController extends Controller
             'price' => 'required|numeric',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validate each image
         ]);
-    
+
         // Store images and save URLs in an array
         $imageUrls = []; // Initialize the array to store image URLs
-    
+
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 // Store the image in the 'public/images' directory
@@ -68,7 +68,7 @@ class RoomController extends Controller
                 $imageUrls[] = '/storage/' . $imagePath; // Store the public URL of the image
             }
         }
-    
+
         // Create a new room entry in the database
         Room::create([
             'title' => $request->title,
@@ -76,10 +76,10 @@ class RoomController extends Controller
             'price' => $request->price,
             'images' => json_encode($imageUrls), // Store images as a JSON array
         ]);
-    
+
         // Redirect back with a success message
         return redirect()->back()->with('success', 'Room added successfully!');
     }
-    
+
 
 }

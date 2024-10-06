@@ -30,7 +30,7 @@
             <div class="btn-view">
                 <a href="{{ route('login') }}" class="login-btn">Login/join</a>
 
-                <a href="#" class="primary-btn mx-2">book a stay</a>
+                {{-- <a href="#" class="primary-btn mx-2">book a stay</a> --}}
             </div>
         </div>
 </header>

@@ -35,11 +35,11 @@
                 <div class="col-lg-2">
                     <p class="t-data"><strong>Total Children :</strong> {{ session('total_children') }}</p>
                 </div>
-            </div>
+                </div>
     </section>
     <div class="container mt-5">
         <h2 class="text-center">Room Categories</h2>
-        
+
         <div class="row">
             @foreach ($rooms as $room)
                 <div class="col-md-4">
@@ -48,7 +48,8 @@
                             <div class="carousel-inner">
                                 @foreach (json_decode($room->images) as $key => $image)
                                     <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                                        <img src="{{ $image }}" class="d-block w-100" alt="{{ $room->title }}">
+                                        <img src="{{ asset($image) }}" class="d-block w-100" alt="{{ $room->title }}">
+
                                     </div>
                                 @endforeach
                             </div>

@@ -51,7 +51,7 @@ header .right-part .nav-view {
 }
 
 header .right-part .nav-view {
-    gap: 6px;
+    gap: 25px;
 }
 
 header .right-part .nav-view .nav-item .nav-link {
@@ -122,7 +122,7 @@ header .btn-view {
     }
 
     header .btn-view .login-btn {
-        font-size: 16px;
+        font-size: 24px;
     }
 }
 
