@@ -95,7 +95,7 @@ header .btn-view {
 
 @media screen and (max-width: 1199px) {
     header .right-part .nav-view {
-        gap: 0;
+        gap: 22px;
         /* Setting gap to 0 */
     }
 

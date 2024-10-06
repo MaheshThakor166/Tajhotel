@@ -1,0 +1,14 @@
+.cont-view .card-title{
+    font-size: 24px;
+    font-family: "Cinzel", serif;
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+.cont-view .card-text{
+    color: var(--dark-color);
+    font-weight:600;
+}
+.cont-view .price-tag{
+    color: var(--primary-color);
+    font-size: 19px;
+}

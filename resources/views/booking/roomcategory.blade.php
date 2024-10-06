@@ -20,30 +20,33 @@
     <section class="inner-view">
         <div class="content-box">
             <div class="row">
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-6 col-sm-6">
                     <p class="t-data"><strong>Check In :</strong> {{ session('check_in') }}</p>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-6 col-sm-6">
                     <p class="t-data"><strong>Check Out :</strong> {{ session('check_out') }}</p>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-6 col-sm-6">
                     <p class="t-data"><strong>Total Rooms :</strong> {{ session('total_rooms') }}</p>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-6 col-sm-6">
                     <p class="t-data"><strong>Total Adults :</strong> {{ session('total_adults') }}</p>
                 </div>
-                <div class="col-lg-2">
+                <div class="col-lg-2 col-md-6 col-sm-6">
                     <p class="t-data"><strong>Total Children :</strong> {{ session('total_children') }}</p>
                 </div>
                 </div>
     </section>
     <div class="container mt-5">
-        <h2 class="text-center">Room Categories</h2>
-
-        <div class="row">
+        <div class="sub-title mb-5">
+            <div class="bd-content"></div>
+            <p class="content-txt">Category</p>
+            <div class="bd-content"></div>
+        </div>
+        <div class="row g-3">
             @foreach ($rooms as $room)
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card cont-view">
                         <div id="roomCarousel{{ $room->id }}" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 @foreach (json_decode($room->images) as $key => $image)
@@ -65,8 +68,8 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $room->title }}</h5>
                             <p class="card-text">{{ $room->description }}</p>
-                            <p><strong>Price:</strong> ${{ $room->price }}/night</p>
-                            <a href="{{ route('finalbooking') }}" class="btn btn-primary">Book Now</a>
+                            <p class="mb-4"><strong class="price-tag">Price:</strong> ${{ $room->price }}/night</p>
+                            <a href="{{ route('finalbooking') }}" class="primary-btn mt-4 mb-3">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -74,6 +77,9 @@
         </div>
     </div>
 
+    <div>
+        @include('include.footer')
+    </div>
     <div>
         @include('include.script')
     </div>
