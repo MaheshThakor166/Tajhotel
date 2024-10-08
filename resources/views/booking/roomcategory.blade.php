@@ -13,7 +13,7 @@
     <section class="booking-img-view">
         <div class="inner-section">
             <div class="img-container">
-                <img src="{{ asset('images/bk.jpg') }}" alt="banner img">
+                <img src="{{ asset('images/do.jpg') }}" alt="banner img">
             </div>
         </div>
     </section>

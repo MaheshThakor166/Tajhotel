@@ -1,0 +1,96 @@
+.booking-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    /* max-width: 1200px; */
+    margin: auto;
+    background-color: white;
+}
+
+.booking-container .room-details, .booking-summary {
+    /* width: 48%; */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-container .content-txt {
+    margin-bottom: 15px;
+    font-size: 30px;
+    color:#4f3700;
+    font-weight: 700;
+}
+
+.booking-container label {
+    font-family: 'circular';
+    font-size: 0.9em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.booking-container input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.booking-container .adult-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking-container .adult-child select {
+    width: 48%;
+}
+
+/* Contact Details Styling */
+.booking-container .contact-details {
+    margin-top: 30px;
+}
+
+.booking-container .contact-details label {
+    font-weight: bold;
+}
+
+.contact-details input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.booking-container .contact-info {
+    margin-top: 10px;
+}
+
+.booking-container .country-code-container {
+    display: flex;
+    gap: 10px;
+}
+.booking-container .adding-data{
+    border: 3px solid #cfbfbf;
+    margin-right: 10px;
+    padding: 5px 10px;
+    color: var(--primary-color);
+    border-radius: 10px 0;
+    font-weight: 600;
+    font-family: 'math';
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.booking-container .checkin-data {
+    font-family: 'circular';
+    font-size: 0.9em;
+    margin-bottom: 15px !important;
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase;
+}
