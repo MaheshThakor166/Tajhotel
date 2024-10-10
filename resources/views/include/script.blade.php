@@ -13,3 +13,5 @@
 <script src="{{ asset('js/sliders.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 <script src="{{ asset('js/bookking.js') }}"></script>
+<script src="{{ asset('js/room.js') }}"></script>
+

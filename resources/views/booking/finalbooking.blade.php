@@ -5,7 +5,7 @@
     @include('include.head')
 </head>
 
-<body>
+<body>x
     <div class="booking-container">
         <div class="container p-0">
             <div class="row g-4">
@@ -32,23 +32,70 @@
                                 <input type="text" placeholder="Last Name" class="w-50 adding-data" required>
                             </div>
                             <div class="adult-child d-flex mt-3">
-                                <div class="w-25">
+                                <p class="adding-data"><span class="get-room">1</span> Room | <span class="get-person">2</span> Adult |
+                                <span class="get-child">3</span>Child <span class="add-btn"><i class="fa-solid fa-plus"></i></span></p>
+
+                                {{-- <div class="w-25">
                                     <label for="adult" class="checkin">Adult</label>
                                     <p class="adding-data">4</p>
-                                </div>
+                                </div> --}}
                                 {{-- <select id="adult">
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select> --}}
-                                <div class="w-25">
+                                {{-- <div class="w-25">
                                     <label for="child" class="checkin">Child</label>
                                     <p class="adding-data">4</p>
-                                </div>
+                                </div> --}}
                                 {{-- <select id="child">
                         <option value="0">0</option>
                         <option value="1">1</option>
                     </select> --}}
                             </div>
+                              <!-- Guests Selection -->
+                <div class="room-dt">
+                              <div id="rooms-container">
+                    <div id="totals-row" class="row">
+                        <div class="col">Total Rooms: <span id="total-rooms">1</span></div>
+                        <div class="col">Total Adults: <span id="total-adults">1</span></div>
+                        <div class="col">Total Children: <span id="total-children">0</span></div>
+                    </div>
+
+                    <div class="room" data-room="1">
+                        <div class="form-group mb-3">
+                           <div class="d-flex justify-content-between mb-3">
+                            <label>Room 1
+                            </label>
+                            <a id="add-room" style="cursor: pointer;"><span class="text-dark">Add More Rooms</span> <span style="color: rgb(6, 108, 6);font-size:14px;"><i class="fa-solid fa-plus"></i></span></a>
+                        </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Adults</label>
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-outline-secondary" onclick="decrement(this)">-</button>
+                                        <input type="number" class="form-control text-center" name="adults[]" value="1" min="1" max="10" readonly>
+                                        <button type="button" class="btn btn-outline-secondary" onclick="increment(this)">+</button>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label>Children (0 - 12 yrs)</label>
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-outline-secondary" onclick="decrement(this)">-</button>
+                                        <input type="number" class="form-control text-center" name="children[]" value="0" min="0" readonly>
+                                        <button type="button" class="btn btn-outline-secondary" onclick="increment(this)">+</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Total Rooms, Adults, Children -->
+
+                </div>
+                </div>
+
+
+                <!-- Add More Rooms -->
                             <input type="text" placeholder="Special Request" class="adding-data my-3">
                             <label for="arrival" class="checkin">Estimated Arrival Time</label>
                             <select id="arrival" class="adding-data">
@@ -59,22 +106,17 @@
                         </div>
 
                         <!-- Contact Information Section -->
-                        <div class="contact-details ">
+                        <div class="contact-details">
                             <h3 class="content-txt">Contact Details</h3>
                             {{-- <label>
                     <input type="checkbox" id="booking-for-someone" />
                     I am booking for someone else
                 </label> --}}
                             <div class="contact-info">
-                                <label for="country-code">Country code</label>
-                                <div class="country-code-container">
-                                    <select id="country-code" class="adding-data">
-                                        <option value="+91">+91</option>
-
-                                        <!-- Add more country codes -->
-                                    </select>
-                                    {{-- <input type="tel" placeholder="Contact no" required> --}}
-                                </div>
+                                <label for="country-code">Phone number</label>
+                                <input type="tel" id="phone" class="adding-data" placeholder="Enter your phone number"
+                       pattern="^\d{3}-\d{3}-\d{4}$"
+                       title="Phone number format: 123-456-7890" required>
                                 <input type="email" placeholder="Email" class="adding-data mt-4" required>
                             </div>
                         </div>

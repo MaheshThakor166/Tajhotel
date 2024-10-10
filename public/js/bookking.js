@@ -1,3 +1,18 @@
+// Select the button using querySelector (since you're targeting a single button)
+const toggleBtn = document.querySelector('.add-btn');
+
+//Select the content element
+const content = document.querySelector('.room-dt');
+
+//Add a click event listener to the button
+toggleBtn.addEventListener('click', () => {
+  //Toggle the 'visible' class on the content element
+  content.classList.toggle('visible');
+});
+
+
+
+
 function increment(button) {
     const input = button.parentElement.querySelector('input');
     let value = parseInt(input.value);
@@ -53,6 +68,8 @@ document.getElementById('add-room').addEventListener('click', function() {
     roomContainer.appendChild(newRoom);
     updateTotals();
 });
+
+
 
 // Remove a room
 function removeRoom(button) {
@@ -110,3 +127,16 @@ function updateTotals() {
          document.getElementById("check_out").value = ''; // Clear the check-out field
      }
  });
+
+
+
+
+
+
+
+
+
+
+
+
+
